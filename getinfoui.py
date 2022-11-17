@@ -18,9 +18,6 @@ def file_save():
 
 
 def restart_program():
-    """Restarts the current program.
-    Note: this function does not return. Any cleanup action (like
-    saving data) must be done before calling this function."""
     python = sys.executable
     os.execl(python, python, * sys.argv)
 
@@ -57,10 +54,9 @@ class HOTEL_MANAGEMENT:
     def __init__(self):
         def gotinfo():
             self.gettininfo = str(self.gather.get())
-            print(self.gettininfo)
             print("\n")
             if self.gettininfo.isdigit() == True and len(self.gettininfo) != 0:
-                self.Text1.insert(INSERT, " valid room number ""\n")
+                self.Text1.insert(INSERT, "Valid room number ""\n")
             else :
                 self.Text1.insert(INSERT,"invalid room number""\n")
 
@@ -70,7 +66,6 @@ class HOTEL_MANAGEMENT:
                 while True:
                     s = pickle.load(f2)
                     a = str(s.room_no)
-                    print (a)
                     if self.gettininfo == a:
                         n = 1
                         print("NAME-", "\t", "\t", s.name)
@@ -79,7 +74,7 @@ class HOTEL_MANAGEMENT:
                         print("\n")
                         print("MOBILE NO.-", "  ", s.mobile_no)
                         print("\n")
-                        print("HIS TOTAL BILL IS Rs.", s.price)
+                        print("TOTAL BILL IS $", s.price)
                     elif EOFError:
                         if n == 0:
                             print("NO GUEST IN ROOM ", self.gettininfo)
@@ -106,7 +101,7 @@ class HOTEL_MANAGEMENT:
             " -underline 0 -overstrike 0"
 
         root.geometry("881x582+249+104")
-        root.title("HOTEL MANAGEMENT")
+        root.title("Hotel Management System")
         root.configure(background="#d9d9d9")
 
 

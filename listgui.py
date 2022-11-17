@@ -18,9 +18,6 @@ def file_save():
 
 
 def restart_program():
-    """Restarts the current program.
-    Note: this function does not return. Any cleanup action (like
-    saving data) must be done before calling this function."""
     python = sys.executable
     os.execl(python, python, * sys.argv)
 
@@ -89,7 +86,7 @@ class HOTEL_MANGMENT_checkin:
                  "-slant roman -underline 0 -overstrike 0"
 
         root.geometry("780x541+504+123")
-        root.title("HOTEL MANAGEMENT")
+        root.title("Hotel Management System")
         root.configure(background="#ffffff")
         root.configure(highlightbackground="#ffffff")
         root.configure(highlightcolor="black")
